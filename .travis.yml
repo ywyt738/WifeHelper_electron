@@ -11,6 +11,6 @@ deploy:
   provider: releases
   api_key:
     secure: U06HITMsyebEtnR3vKY/0j0SUY2x2v9DbtCBaqMtIhj61MS2E5l37xW5oHGcCcSX2wNgnW0QOrRTDss4ISlfKU3ON+lYS7nRUukcPLObzHmUsChuhUdhn90mGESFYlRzvDXmvqr68kFB4bIUZw2tYv2AdF7MKPPj2USbh8+T7C+jfV4pvEafsgs68digqHFqswVKURCfWyrex1giCjdnmc7H7xgzAs2+h/iu+WPM6UpCW4IyFt4PiNxFA2Ywc/MPC2EKqzXqGDZf0mJHq+NMvwyUPWWbQgD96+NQeEQowGFSPnwqd2nsrNi5e30OTen6EdhXVx4PdKwDH4rzBS94lCuQWqww3ird4euB8015MtEQn45vTToYBYqBMHAt4QRyJp56yYEMoRGXrvxJgCY8yl4A17FN2j+ImQo0lt28sR7vUmIIvzxm1SM2m5NDkPzEM6dI9CFd9BFcSNeSMTx56EJh8KfzEI42/KGejYRT9EaR8nhU7Jaui8jPFtjEPQd3gWKDaC7LdB4E3mKvLEelA1gfo9IhbCC5M2tNI8N68vE0F3CqaSKZ7Lspnwe8gEPY4n4ogH8cQBNUkN8BN8nFrrlLu0m06QyMC1wb+MXjqDvhyyb1Crp5uMvr/IxjC32fMNNS/YYU5VW48xHCWTx4RBp0SMSBQW6X3Q6VF57tfcg=
-  file: dist/WifeHelper-1.0.0-ia32-win.zip
+  file: dist\\WifeHelper-1.0.0-ia32-win.zip
   on:
     repo: ywyt738/WifeHelper_electron
