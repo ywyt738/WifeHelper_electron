@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>🎉GO GO Baby~🎉</title>
+  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.slim.min.js"></script>
+  <style>
+    body {
+      font-size: 18px
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1>GO GO Baby~</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <form id="form">
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <label for="id">单号</label>
+          <input type="text" class="form-control" id="id">
+        </div>
+
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <label for="contactDatetime">联系时间</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="contractDatetime">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" id="addNow">Now</button>
+            </span>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <label for="caseType">类别</label>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="caseType" value="乱设摊" checked> 乱设摊
+            </label>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="caseType" value="损毁承重结构"> 损毁承重结构
+            </label>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="caseType" value="居改非"> 居改非
+            </label>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="caseType" value="夜间施工"> 夜间施工
+            </label>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="caseType" value="占绿毁绿"> 占绿毁绿
+            </label>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="caseType" value="广告设施"> 广告设施
+            </label>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="caseType" value="环保"> 环保
+            </label>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="caseType" value="出租车类"> 出租车类
+            </label>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="caseType" value="非法客运类"> 非法客运类
+            </label>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="caseType" value="其他类别"> 其他类别
+            </label>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <label for="belongTeam">所属小队</label>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="belongTeam" value="一小队" checked> 一小队
+            </label>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="belongTeam" value="二小队"> 二小队
+            </label>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="belongTeam" value="三小队"> 三小队
+            </label>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="belongTeam" value="四小队"> 四小队
+            </label>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="belongTeam" value="机动队"> 机动队
+            </label>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="belongTeam" value="保安处置"> 保安处置
+            </label>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <label class="radio-inline">
+              <input type="radio" name="belongTeam" value="其他"> 其他
+            </label>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <button type="button" class="btn btn-success" id="submit">提交</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+  </script>
+</body>
+
+</html>
