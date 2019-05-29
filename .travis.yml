@@ -2,16 +2,15 @@ language: node_js
 os:
 - windows
 node_js:
-- stable
 - '8'
 before_install:
-- npm install electron-packager -g
-scripts: electron-packager . WifeHelper --asar=true --platform=win32 ---out=build
+- npm install electron-builder -g
+scripts: electron-builder build -w zip --ia32
 
 deploy:
   provider: releases
   api_key:
     secure: nogjn7EN27jHLpyq5uur55xdUGWhmdIQDDP33ThQx/1x5nZGfetz9dYIv1l6l0hQHUNbxzzPZSTg5SwonSDJr/3Ydusl9x4frrtWKFpHHRB/mfI8K2LLbsHmR7TNnnDtql/bcmbwBec/dBSrMocfR8XLBl5exCpFJ4npWctc35vnCZckyg+/GaMUu8XS5Yk5PcGAc0fm9PRxKZJvSNLxYVC8JdjBhdZyioPCy5H5xsWfI+pPRjaTvumKzLbIAem3ibvWTWD2sQxhx/0uDwDvWwW4XLWkiclpjhCxq007ZbWESuQThpH/F7kWCyGjRQRERhaq9ZhRh6ZXdgdw9vTlHG2RDm7ZZlQ0LgLx2M7AavsEtpZDSxDyXROsD+Jj3LUtyld/u2C99NYXS/z8FUvtSt+klSxR4DUvscmpmvM11g73AGLECS1aDmux5KoZJ7ftNAVqGRQVop1Kb4xYy9f6uKWTZqlwfkWQjUe+AoJEVJcmlfHtZ9kH7OpnnqGN+cbTkoRajoAPyaIeGlT/Nyreav291wj+ebwEZd7M7fpHLC7uhZhusvoZsIoEUadG8XXemQRU2iQgw7sLzTjw8rSQUFcrl4Zmdoqik2AyJ5RGD6E6UNBik79VtKohAN0KujqeKjY1mDR2C04cUKfH/HwCBkOWTgtS8iwenHD58Div9Rg=
-  file: build/*
+  file: dist/*.zip
   on:
     repo: ywyt738/WifeHelper_electron
