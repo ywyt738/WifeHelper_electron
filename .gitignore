@@ -88,5 +88,5 @@ typings/
 .dynamodb/
 
 .DS_Store
-
+.vscode/
 接单.csv
