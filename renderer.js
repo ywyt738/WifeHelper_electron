@@ -42,5 +42,10 @@ function addNow() {
     timeInput.value = _t + ' ' + now
 }
 
+function openDb() {
+    ipcRenderer.send('openDb')
+}
+
 document.getElementById("submit").addEventListener("click", save);
 document.getElementById("addNow").addEventListener("click", addNow);
+document.getElementById("openDb").addEventListener("click", openDb);

@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron")
+const { app, BrowserWindow, shell } = require("electron")
 const { ipcMain } = require('electron')
 const fs = require('fs')
 const iconv = require('iconv-lite')
@@ -6,7 +6,7 @@ const iconv = require('iconv-lite')
 function createWindow() {
     let win = new BrowserWindow({
         width: 815,
-        height: 520,
+        height: 550,
         // resizable: false,
         webPreferences: {
             nodeIntegration: true
@@ -36,8 +36,13 @@ app.on('active', () => {
     }
 })
 
+var filename
+if (process.platform === 'win32') {
+    filename = process.cwd() + '\\接单.csv'
+} else {
+    filename = process.cwd() + '/接单.csv'
+}
 ipcMain.on('save', (event, arg) => {
-    let filename = __dirname + '/接单.csv'
     console.log(arg)
     let data = ""
     for (let i = 0; i < arg.length; i++) {
@@ -58,4 +63,8 @@ ipcMain.on('save', (event, arg) => {
             event.reply('saveResult', true)
         }
     })
+})
+
+ipcMain.on('openDb', (event) => {
+    shell.showItemInFolder(filename)
 })
