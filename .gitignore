@@ -92,3 +92,4 @@ typings/
 接单.csv
 
 .npmrc
+dist/

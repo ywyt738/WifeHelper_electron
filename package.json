@@ -6,15 +6,23 @@
   "scripts": {
     "start": "electron ."
   },
-  "author": "",
+  "author": "Huangxiaojun",
   "license": "ISC",
-  "description": "",
+  "description": "Go Go Baby!",
   "dependencies": {
+    "electron-updater": "^4.1.2",
     "iconv-lite": "^0.4.24",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "update-electron-app": "^1.5.0"
   },
   "devDependencies": {
-    "electron": "^5.0.2",
-    "electron-packager": "^13.1.1"
+    "electron": "^5.0.2"
+  },
+  "build": {
+    "appId": "com.electron.wifehelper",
+    "win": {
+      "verifyUpdateCodeSignature": false,
+      "publish": "github"
+    }
   }
 }
