@@ -33,6 +33,7 @@ function getFormData() {
 function save() {
     let formdata = getFormData()
     ipcRenderer.send('save', formdata)
+    document.getElementById('form').reset()
 }
 
 function addNow() {

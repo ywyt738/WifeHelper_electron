@@ -90,3 +90,5 @@ typings/
 .DS_Store
 .vscode/
 接单.csv
+
+.npmrc
