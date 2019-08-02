@@ -21,7 +21,7 @@
   "build": {
     "appId": "com.electron.wifehelper",
     "win": {
-      "target": "nsis"
+      "target": ["nsis", "zip"]
     }
   }
 }
