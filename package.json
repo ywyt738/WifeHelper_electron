@@ -1,7 +1,7 @@
 {
   "name": "wifehelper",
   "productName": "WifeHelper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
@@ -10,10 +10,10 @@
   "license": "ISC",
   "description": "Go Go Baby!",
   "dependencies": {
+    "electron-log": "^3.0.7",
     "electron-updater": "^4.1.2",
     "iconv-lite": "^0.4.24",
-    "moment": "^2.24.0",
-    "update-electron-app": "^1.5.0"
+    "moment": "^2.24.0"
   },
   "devDependencies": {
     "electron": "^5.0.2"
@@ -21,8 +21,7 @@
   "build": {
     "appId": "com.electron.wifehelper",
     "win": {
-      "verifyUpdateCodeSignature": false,
-      "publish": "github"
+      "target": "nsis"
     }
   }
 }

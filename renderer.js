@@ -12,6 +12,10 @@ ipcRenderer.on('saveResult', (event, arg) => {
     }
 })
 
+ipcRenderer.on('message', function (event, text) {
+    console.log(text)
+})
+
 function getRadioValue(radioName) {
     let allRadio = document.getElementsByName(radioName)
     for (let i = 0; i < allRadio.length; i++) {
