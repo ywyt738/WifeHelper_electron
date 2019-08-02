@@ -20,8 +20,21 @@
   },
   "build": {
     "appId": "com.electron.wifehelper",
-    "win": {
-      "target": ["nsis", "zip"]
-    }
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "ywyt738",
+        "repo": "WifeHelper_electron"
+      }
+    ],
+    "target": [
+      "nsis",
+      "zip"
+    ]
   }
+},
+"repository": {
+  "type": "git",
+  "url": "https://github.com/ywyt738/WifeHelper_electron.git"
+}
 }
