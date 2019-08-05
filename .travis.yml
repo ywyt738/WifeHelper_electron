@@ -6,4 +6,4 @@ node_js:
 before_install:
 - npm install electron-builder -g
 script:
-  - electron-builder build -w --publish=always
+  - electron-builder build -w --x64 --ia32 --publish=always
