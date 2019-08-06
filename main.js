@@ -66,11 +66,11 @@ autoUpdater.on('checking-for-update', () => {
 })
 autoUpdater.on('update-available', (info) => {
     sendLogToWindow('Update available.');
-    win.webContents.send('message', '发现可用更新版本，正在后台下载。');
+    win.webContents.send('alert', '发现可用更新版本，正在后台下载。');
 })
 autoUpdater.on('update-not-available', (info) => {
     sendLogToWindow('Update not available.');
-    win.webContents.send('message', '当前没有可用的更新。');
+    win.webContents.send('alert', '当前没有可用的更新。');
 })
 autoUpdater.on('error', (err) => {
     sendLogToWindow('Error in auto-updater. ' + err);
