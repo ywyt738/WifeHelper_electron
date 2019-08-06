@@ -25,7 +25,7 @@ let template = [{
             }
         },
         {
-            label: '更新升级',
+            label: '检查更新...',
             click: function () {
                 autoUpdater.checkForUpdatesAndNotify()
             }
@@ -57,30 +57,33 @@ if (process.platform === 'win32') {
     filename = process.cwd() + '/接单.csv'
 }
 
-function sendStatusToWindow(text) {
+function sendLogToWindow(text) {
     win.webContents.send('message', text);
 }
 
 autoUpdater.on('checking-for-update', () => {
-    sendStatusToWindow('Checking for update...');
+    sendLogToWindow('Checking for update...');
 })
 autoUpdater.on('update-available', (info) => {
-    sendStatusToWindow('Update available.');
+    sendLogToWindow('Update available.');
+    win.webContents.send('message', '发现可用更新版本，正在后台下载。');
 })
 autoUpdater.on('update-not-available', (info) => {
-    sendStatusToWindow('Update not available.');
+    sendLogToWindow('Update not available.');
+    win.webContents.send('message', '当前没有可用的更新。');
 })
 autoUpdater.on('error', (err) => {
-    sendStatusToWindow('Error in auto-updater. ' + err);
+    sendLogToWindow('Error in auto-updater. ' + err);
 })
 autoUpdater.on('download-progress', (progressObj) => {
     let log_message = "Download speed: " + progressObj.bytesPerSecond;
     log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
     log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
-    sendStatusToWindow(log_message);
+    win.webContents.send('updateProcess', progressObj.percent);
+    sendLogToWindow(log_message);
 })
 autoUpdater.on('update-downloaded', (info) => {
-    sendStatusToWindow('Update downloaded');
+    sendLogToWindow('Update downloaded');
 });
 
 function createWindow() {
@@ -125,7 +128,7 @@ app.on('active', () => {
 });
 
 ipcMain.on('save', (event, arg) => {
-    sendStatusToWindow(arg)
+    sendLogToWindow(arg)
     let data = ""
     for (let i = 0; i < arg.length; i++) {
         if (i === arg.length - 1) {
@@ -138,11 +141,11 @@ ipcMain.on('save', (event, arg) => {
     let encodedData = iconv.encode(data, 'gbk');
     fs.appendFile(filename, encodedData, function (err) {
         if (err) {
-            sendStatusToWindow('save fail')
-            event.reply('saveResult', false)
+            sendLogToWindow('save fail')
+            event.reply('alert', "保存失败")
         } else {
-            sendStatusToWindow('save success')
-            event.reply('saveResult', true)
+            sendLogToWindow('save success')
+            event.reply('alert', "提交成功")
         }
     })
 })

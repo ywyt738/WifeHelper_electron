@@ -4,16 +4,16 @@
 const { ipcRenderer } = require('electron')
 const moment = require('moment')
 
-ipcRenderer.on('saveResult', (event, arg) => {
-    if (arg) {
-        alert("提交成功")
-    } else {
-        alert("保存失败")
-    }
-})
-
 ipcRenderer.on('message', function (event, text) {
     console.log(text)
+})
+
+ipcRenderer.on('alert', function (event, text) {
+    alert(text)
+})
+
+ipcRenderer.on('updateProcess', function (event, percent) {
+    document.getElementById("update_percent").textContent = "下载进度: " + percent + "%"
 })
 
 function getRadioValue(radioName) {
