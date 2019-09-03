@@ -42,9 +42,10 @@ function save() {
 
 function addNow() {
     timeInput = document.getElementById('contractDatetime')
-    let now = moment().format('YYYY-MM-DD HH:mm')
+    let now = moment().format('YYYY/M/D HH:mm')
     _t = timeInput.value
-    timeInput.value = _t + ' ' + now
+    _t = _t + ' ' + now
+    timeInput.value = _t.replace(/^\s*|\s*$/g,"")
 }
 
 function openDb() {
