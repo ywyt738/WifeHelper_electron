@@ -123,7 +123,7 @@ app.on('active', () => {
     }
 });
 
-ipcMain.on('save', (event, arg) => {
+ipcMain.on('save', (event, arg, yearMonth) => {
     sendLogToWindow(arg)
     let data = ""
     for (let i = 0; i < arg.length; i++) {
@@ -133,6 +133,7 @@ ipcMain.on('save', (event, arg) => {
         }
         data = data + arg[i] + ','
     }
+    data += ',' + yearMonth
     data += '\n'
     let encodedData = iconv.encode(data, 'gbk');
     fs.appendFile(filename, encodedData, function (err) {

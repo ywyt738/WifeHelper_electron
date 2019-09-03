@@ -36,7 +36,10 @@ function getFormData() {
 
 function save() {
     let formdata = getFormData()
-    ipcRenderer.send('save', formdata)
+    let timeInput = document.getElementById('contractDatetime')
+    timeInput.value.match(/(\d{4}[\/]\d{1,2})[\/](\d{1,2})/g)
+    let month = RegExp.$1
+    ipcRenderer.send('save', formdata, month)
     document.getElementById('form').reset()
 }
 
