@@ -16,7 +16,7 @@
     "moment": "^2.24.0"
   },
   "devDependencies": {
-    "electron": "^5.0.2"
+    "electron": "^11.5.0"
   },
   "build": {
     "appId": "com.electron.wifehelper",
